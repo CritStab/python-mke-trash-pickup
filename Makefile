@@ -82,3 +82,7 @@ cloud-update :
 cloud-delete :
 	aws cloudformation delete-stack \
 		--stack-name $(STACK_NAME)
+
+test : venv
+	@$(VENV_DIR)/bin/pip install --quiet tox
+	@$(VENV_DIR)/bin/tox
